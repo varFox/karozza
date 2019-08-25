@@ -1,8 +1,8 @@
 <template>
-  <div class="firstForm">
-    <h1>{{ msg }}</h1>
-    <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?">
-    <button class="search">Найти</button>
+  <div class="firstForm" id="form-template">
+    <h1>все автомaгaзины тут</h1>
+    <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="detail">
+    <button class="search" @click="showDetail()">Найти</button>
     <label for="detail">Например: клапан вентиляции, масло SHELL Helix</label>
     <button class="addImg"><i class="fa fa-paperclip" aria-hidden="true"></i>Прикрепить изображение</button>
     <h3>Вы получите</h3>
@@ -26,15 +26,26 @@
         <p>Бесплатную доставку</p>
       </div>
     </div>
-  </div>
-    
+  </div> 
 </template>
 
 <script>
+
 export default {
   name: 'Form',
-  props: {
-    msg: String
+  props: ['goNext'],
+  data() {
+    return {
+      detail: ''
+    }
+  },
+  methods: {
+    showDetail() {
+      this.goNext({
+        detail: this.detail,
+        formNumber: 1
+      })
+    }
   }
 }
 </script>
@@ -60,7 +71,7 @@ main .search {
 main label {
   display: flex;
   font-weight: 300;
-  margin: 8px 20px;
+  margin: 8px 85px;
 }
 main .addImg {
   display: flex;
@@ -68,7 +79,7 @@ main .addImg {
   color: #ffffff;
   border-radius: 7px;
   padding: 5px 8px;
-  margin-left: 20px;
+  margin-left: 85px;
 }
 main .addImg i {
   transform: rotate(85deg) translateX(3px);
