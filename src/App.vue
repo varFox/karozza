@@ -3,7 +3,7 @@
     <div class="headerSiteBar" v-if="formNumber > 0">
       <div class="headerTitle">
         <h2>Заявка на атозапчасти</h2>
-        <p class="steps">{{ form }}</p>
+        <!-- <p class="steps">{{ form }}</p> -->
         <button><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
       </div>
       <div class="siteBar">

@@ -1,6 +1,6 @@
 <template>
 <div id="model-template">
-  <label for="inputModel">Выберете модель автомобиля: {{ form.id }}</label>
+  <label for="inputModel">Выберете модель автомобиля:</label>
   <input id="inputModel" type="text" v-model="searchModel" placeholder="Начните вводить название"> 
   <div class="allModel">
     <button class="checkModel" 
@@ -54,9 +54,6 @@ export default {
           for (let i = 0; i < keys.length; i++) {
             this.dataModels.push({'id': keys[i], 'text': aa[keys[i]]});
           }
-            console.log(this.dataModels);
-
-          // checkMore ? filteredModels : filteredModels.length > 16 ? filteredModels.slice(0,15) : filteredModels.slice(0,16)
       });
     },
     showModels(model) {
