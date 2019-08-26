@@ -1,6 +1,8 @@
 <template>
   <div id="mainForm">
-    <div class="headerSiteBar" v-if="formNumber > 0">
+      
+
+    <div class="headerSiteBar" v-if="formNumber > 0 && stepNumber === 1">
       <div class="headerTitle">
         <h2>Заявка на атозапчасти</h2>
         <!-- <p class="steps">{{ form }}</p> -->
@@ -14,8 +16,9 @@
       
     </div>
     <Form v-if="formNumber === 0" :goNext="goNext"/>
-    <MarkModel v-if="formNumber === 1" :formNumber="formNumber" :goNext="goNext"/>
-    <Model v-if="formNumber >= 2" :form="form" :goNext="goNext"/>
+    <MarkModel v-if="formNumber === 1" :goNext="goNext"/>
+    <Model v-if="formNumber === 2" :form="form" :goNext="goNext"/>
+    <Year v-if="formNumber === 3" :goNext="goNext"/>
     
   </div>
 </template>
@@ -24,13 +27,15 @@
 import Form from './components/Form.vue';
 import MarkModel from './components/MarkModel.vue';
 import Model from './components/Model.vue';
+import Year from './components/Year.vue';
 
 export default {
   name: 'mainForm',
   components: {
     Form,
     MarkModel,
-    Model
+    Model,
+    Year
   },
   data() {
     return {

@@ -19,7 +19,7 @@
 <script>
 export default {
   name: 'MarkModel',
-  props: ['formNumber', 'goNext'],
+  props: ['goNext'],
   data() {
     return {
       src: './../json/MarkJSON.json',
@@ -35,9 +35,7 @@ export default {
   },
   computed: {
     filteredMarks() {
-      // console.log(this.dataMarks);
       return this.dataMarks.filter(dataMark => {
-        // console.log(dataMark);
         return dataMark.text.toLowerCase().indexOf(this.searchMark.toLowerCase()) !== -1
       })
     }

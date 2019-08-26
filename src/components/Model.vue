@@ -10,7 +10,7 @@
       <p>{{ dataModel.text }}</p>
     </button>
     <button class="checkModel checkMore" v-if="filteredModels.length > 16 && checkMore === false" @click="checkMore = true">
-      <p>Ещё марки</p> 
+      <p>Ещё модели</p> 
     </button>
   </div>
 </div>
