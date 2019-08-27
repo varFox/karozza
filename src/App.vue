@@ -2,11 +2,11 @@
   <div id="mainForm">
       
 
-    <div class="headerSiteBar" v-if="formNumber > 0 && stepNumber === 1">
+    <div class="headerSiteBar" v-if="formNumber > 0 && stepNumber < 4">
       <div class="headerTitle">
         <h2>Заявка на атозапчасти</h2>
         <!-- <p class="steps">{{ form }}</p> -->
-        <button><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button @click="backArrow()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
       </div>
       <div class="siteBar">
         <div class="widthStep" :style="{ width: returnWidth() }"></div>
@@ -19,6 +19,8 @@
     <MarkModel v-if="formNumber === 1" :goNext="goNext"/>
     <Model v-if="formNumber === 2" :form="form" :goNext="goNext"/>
     <Year v-if="formNumber === 3" :goNext="goNext"/>
+    <VIN v-if="formNumber === 4" :goNext="goNext"/>
+    <InfoAccount v-if="formNumber === 5" :goNext="goNext"/>
     
   </div>
 </template>
@@ -28,6 +30,8 @@ import Form from './components/Form.vue';
 import MarkModel from './components/MarkModel.vue';
 import Model from './components/Model.vue';
 import Year from './components/Year.vue';
+import VIN from './components/VIN.vue';
+import InfoAccount from './components/InfoAccount.vue';
 
 export default {
   name: 'mainForm',
@@ -35,7 +39,9 @@ export default {
     Form,
     MarkModel,
     Model,
-    Year
+    Year,
+    VIN,
+    InfoAccount
   },
   data() {
     return {
@@ -77,6 +83,13 @@ export default {
     },
     returnWidth() {
       return Math.round( 100 / 3 * this.stepNumber) + '%'
+    },
+    backArrow() {
+      if (this.formNumber === 4 || this.formNumber === 5) {
+        this.stepNumber = this.stepNumber - 1;
+      }
+      this.formNumber = this.formNumber - 1;
+      
     }
   }
 }
