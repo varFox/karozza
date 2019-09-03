@@ -21,6 +21,7 @@
     <Year v-if="formNumber === 3" :goNext="goNext"/>
     <VIN v-if="formNumber === 4" :goNext="goNext"/>
     <InfoAccount v-if="formNumber === 5" :goNext="goNext"/>
+    <OrderConfirmation v-if="formNumber === 6" :form="form" :goNext="goNext"/>
     
   </div>
 </template>
@@ -32,6 +33,7 @@ import Model from './components/Model.vue';
 import Year from './components/Year.vue';
 import VIN from './components/VIN.vue';
 import InfoAccount from './components/InfoAccount.vue';
+import OrderConfirmation from './components/OrderConfirmation.vue';
 
 export default {
   name: 'mainForm',
@@ -41,7 +43,8 @@ export default {
     Model,
     Year,
     VIN,
-    InfoAccount
+    InfoAccount,
+    OrderConfirmation
   },
   data() {
     return {
@@ -59,7 +62,8 @@ export default {
         name: '',
         email: '',
         tel: '',
-        delivery: false
+        delivery: false,
+        img: ''
       },
       component: 'Form'
     }

@@ -4,7 +4,7 @@
     <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="detail">
     <button class="search" @click="showDetail()">Найти</button>
     <label for="detail">Например: клапан вентиляции, масло SHELL Helix</label>
-    <button class="addImg"><i class="fa fa-paperclip" aria-hidden="true"></i>Прикрепить изображение</button>
+    <button class="addImg"><i class="fa fa-paperclip" aria-hidden="true"></i>{{ msg }}<input type="file" @change="imgUrl($event.target.value)" > </button>
     <h3>Вы получите</h3>
     <div class="blockPlus">
       <div class="plus">
@@ -36,15 +36,20 @@ export default {
   props: ['goNext'],
   data() {
     return {
-      detail: ''
+      detail: '',
+      msg: 'Прикрепить изображение'
     }
   },
   methods: {
     showDetail() {
       this.goNext({
         detail: this.detail,
-        formNumber: 1
+        formNumber: 1,
+        msg: this.msg
       })
+    },
+    imgUrl(value) {
+      this.msg = value.slice(12, 35)
     }
   }
 }
@@ -74,14 +79,17 @@ main label {
   margin: 8px 85px;
 }
 main .addImg {
+  width: 205px;
   display: flex;
   background-color: #0067D7;
   color: #ffffff;
   border-radius: 7px;
   padding: 5px 8px;
   margin-left: 85px;
+  position: relative;
 }
 main .addImg i {
+  
   transform: rotate(85deg) translateX(3px);
   margin-right: 5px;
 }
@@ -125,5 +133,14 @@ main .blockPlus .plus p {
   width: 205px;
   margin-left: -30px;
   margin-top: 15px;
+}
+main input[type=file] {
+  width: 205px;
+  height: 30px;
+  position: absolute;
+  outline:0;
+  opacity:0;
+  top: 0;
+  left: 0;
 }
 </style>
