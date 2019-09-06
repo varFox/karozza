@@ -5,7 +5,7 @@
     <div class="headerSiteBar" v-if="formNumber > 0 && stepNumber < 4">
       <div class="headerTitle">
         <h2>Заявка на атозапчасти</h2>
-        <!-- <p class="steps">{{ form }}</p> -->
+        <p class="steps">{{ form }}</p>
         <button @click="backArrow()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
       </div>
       <div class="siteBar">
@@ -63,7 +63,8 @@ export default {
         email: '',
         tel: '',
         delivery: false,
-        img: ''
+        img: '',
+        msg: ''
       },
       component: 'Form'
     }
