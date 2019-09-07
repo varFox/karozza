@@ -5,7 +5,7 @@
     <div class="headerSiteBar" v-if="formNumber > 0 && stepNumber < 4">
       <div class="headerTitle">
         <h2>Заявка на атозапчасти</h2>
-        <p class="steps">{{ form }}</p>
+        <!-- <p class="steps">{{ form }}</p> -->
         <button @click="backArrow()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
       </div>
       <div class="siteBar">
@@ -22,6 +22,7 @@
     <VIN v-if="formNumber === 4" :goNext="goNext"/>
     <InfoAccount v-if="formNumber === 5" :goNext="goNext"/>
     <OrderConfirmation v-if="formNumber === 6" :form="form" :goNext="goNext"/>
+    <SentOrder v-if="formNumber === 7" :form="form" :goNext="goNext"/>
     
   </div>
 </template>
@@ -34,6 +35,7 @@ import Year from './components/Year.vue';
 import VIN from './components/VIN.vue';
 import InfoAccount from './components/InfoAccount.vue';
 import OrderConfirmation from './components/OrderConfirmation.vue';
+import SentOrder from './components/SentOrder.vue';
 
 export default {
   name: 'mainForm',
@@ -44,7 +46,8 @@ export default {
     Year,
     VIN,
     InfoAccount,
-    OrderConfirmation
+    OrderConfirmation,
+    SentOrder
   },
   data() {
     return {
@@ -102,6 +105,7 @@ export default {
 
 <style>
 main #mainForm {
+  position: relative;
   width: 700px;
   display: block;
   justify-content: center;

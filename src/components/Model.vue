@@ -1,7 +1,7 @@
 <template>
 <div id="model-template">
   <label for="inputModel">Выберете модель автомобиля:</label>
-  <input id="inputModel" type="text" v-model="searchModel" placeholder="Начните вводить название"> 
+  <input id="inputModel" type="text" v-model="searchModel" placeholder="Начните вводить название" required> 
   <div class="allModel">
     <button class="checkModel" 
       v-for="dataModel of checkMore ? filteredModels : filteredModels.length > 16 ? filteredModels.slice(0,15) : filteredModels.slice(0,16)"
@@ -92,6 +92,7 @@ main #model-template input {
   margin-bottom: 20px;
   padding: 0 15px;
 }
+
 main #model-template button.checkModel {
   width: 125px;
   background-color: #fff;
@@ -101,6 +102,10 @@ main #model-template button.checkModel {
   font-size: 14px;
   border-radius: 10px;
   margin-right: 45px;
+}
+main #model-template button.checkModel:active {
+  border: 1px solid #0F73E8;
+  box-shadow: 5px 5px 10px -6px rgba(15,115,232,1);
 }
 main #model-template button.checkMore {
   background-color: #0F73E8;

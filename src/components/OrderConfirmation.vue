@@ -1,7 +1,7 @@
 <template>
 <div id="order-confirmation-template">
   <h2>Подтверждение заказа</h2>
-  <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="form.detail" readonly><i class=" up-i fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i>
+  <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="form.detail" readonly required><i class=" up-i fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i>
   <button class="addImg"><i class="fa fa-paperclip" aria-hidden="true"></i>{{ form.msg }}<input type="file" @change="imgUrl($event.target.value)" > </button>
   <div class="mmy">
     <span>Марка: </span><p> {{form.mark}} </p>
@@ -9,24 +9,24 @@
     <span>Год: </span><p> {{form.year}} </p>
   </div>
   <div class="vin">
-    <span>VIN: </span><p><input class="infoLog " type="text" readonly v-model="form.VIN"><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
+    <span>VIN: </span><p><input class="infoLog " type="text" readonly v-model="form.VIN" required><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
   </div>
   
   <div class="personal-data">
-    <p><span>Имя: </span><input class="infoLog" type="text" readonly v-model="form.name"><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i> </p>
-    <p><span>Телефон: </span><input class="infoLog" type="text" readonly  v-model="form.tel"><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
-    <p><span>E-mail: </span><input class="infoLog" type="text" readonly  v-model="form.email"><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
+    <p><span>Имя: </span><input class="infoLog" type="text" readonly v-model="form.name" required><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i> </p>
+    <p><span>Телефон: </span><input class="infoLog" type="text" readonly  v-model="form.tel" required><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
+    <p><span>E-mail: </span><input class="infoLog" type="text" readonly  v-model="form.email" required><i class="fa fa-pencil" aria-hidden="true" @click="editInput($event.target)"></i></p>
   </div>
   <div class="delivery-block">
     <h3>Доставка</h3>
     <div class="delivery-label-block">
       <label class="radio-p">
-        <input class="radio-input" name="delivery" type="radio" value="delivery">
+        <input class="radio-input" name="delivery" type="radio" value="delivery" checked="checked" required>
         <span>Мне нужна доставка</span>
         Бесплатно в пределах районав котором расположен магазин. 150 рублей за пределы района.
       </label>
       <label class="radio-p">
-        <input class="radio-input" name="delivery" type="radio" value="not-delivery">
+        <input class="radio-input" name="delivery" type="radio" value="not-delivery" required>
         <span>Заберу сам</span>
         Бесплатно.
       </label>
@@ -71,6 +71,9 @@ export default {
       });
     },
     saveInfo() {
+      this.goNext({
+        formNumber: 1
+      });
       console.log(this.form);
     },
     imgUrl(value) {
@@ -112,7 +115,7 @@ main #order-confirmation-template .addImg i {
   margin-right: 5px;
 }
 main input[type=file] {
-  width: 205px;
+  width: 210px;
   height: 30px;
   position: absolute;
   outline:0;

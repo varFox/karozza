@@ -1,7 +1,7 @@
 <template>
 <div id="year-template">
   <label for="inputYear">Выберете год автомобиля</label>
-  <input id="inputYear" type="text" v-model="searchYear" placeholder="Начните вводить год"> 
+  <input id="inputYear" type="text" v-model="searchYear" placeholder="Начните вводить год" required> 
   <div class="allYear">
     <button class="checkYear" 
       v-for="dataYear of checkMore ? filteredYears : filteredYears.length > 16 ? filteredYears.slice(0,15) : filteredYears.slice(0,16)"
@@ -94,6 +94,10 @@ main #year-template button.checkYear {
   font-size: 14px;
   border-radius: 10px;
   margin-right: 45px;
+}
+main #year-template button.checkYear:active {
+  border: 1px solid #0F73E8;
+  box-shadow: 5px 5px 10px -6px rgba(15,115,232,1);
 }
 main #year-template button.checkMore {
   background-color: #0F73E8;

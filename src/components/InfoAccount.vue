@@ -1,9 +1,9 @@
 <template>
   <div id="info-acc-template">
     <label for="info-acc-first" class="label-first">Заполните данные для регистрации личного кабинета:</label>
-    <input id="info-acc-first" class="info-acc" type="text" placeholder="Имя" v-model="saveName">
-    <input class="info-acc" type="text" placeholder="E-mail" v-model="saveEmail">
-    <input id="info-acc-last" class="info-acc" type="text" placeholder="Телефон" v-model="saveTel">
+    <input id="info-acc-first" class="info-acc" type="text" placeholder="Имя" v-model="saveName" required>
+    <input class="info-acc" type="text" placeholder="E-mail" v-model="saveEmail" required>
+    <input id="info-acc-last" class="info-acc" type="text" placeholder="Телефон" v-model="saveTel" required>
     <label for="info-acc-last">На E-mail вы будете получать только сообщения по вашей заявке. А телефон увидит магазин, который вы выберете в качестве исполнителя.</label>
     <div class="wrap-btn">
       <button class="btnNext" @click="saveInfo()">Далее</button>

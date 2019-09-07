@@ -1,7 +1,7 @@
 <template>
   <div class="firstForm" id="form-template">
     <h1>все автомaгaзины тут</h1>
-    <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="detail">
+    <input id='detail' type="text" placeholder="Какую автозапчасть вы ищите?" v-model="detail" required>
     <button class="search" @click="showDetail()">Найти</button>
     <label for="detail">Например: клапан вентиляции, масло SHELL Helix</label>
     <button class="addImg"><i class="fa fa-paperclip" aria-hidden="true"></i>{{ msg }}<input type="file" @change="imgUrl($event.target.value)" > </button>

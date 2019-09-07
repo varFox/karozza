@@ -1,14 +1,14 @@
 <template>
   <div id="vin-template">
-    <input id="VIN" class="vin" type="text" placeholder="Введите VIN-номер" v-model="saveVin">
-    <input class="vin bottomVin" type="text" name="example" placeholder="Выберете категорию запчастей" readonly @click="showCheckboxes()">
+    <input id="VIN" class="vin" type="text" placeholder="Введите VIN-номер" v-model="saveVin" required>
+    <input class="vin bottomVin" type="text" name="example" placeholder="Выберете категорию запчастей" readonly required @click="showCheckboxes()" >
     <div id="checkboxes" @change="changeCheckbox($event)">
       
-      <label><input type="checkbox" id="one" value="First checkbox">First checkbox</label>
+      <label><input type="checkbox" id="one" value="First checkbox" required>First checkbox</label>
       
-      <label><input type="checkbox" id="two" value="Second checkbox">Second checkbox</label>
+      <label><input type="checkbox" id="two" value="Second checkbox" required>Second checkbox</label>
       
-      <label><input type="checkbox" id="three" value="Third checkbox">Third checkbox</label>
+      <label><input type="checkbox" id="three" value="Third checkbox" required>Third checkbox</label>
     </div>
     <button class="btnNext" @click="saveInfo()">Далее</button>
     <label for="VIN">VIN-номер нужен для того, чтобы сотрудник магазина мог более точно подобрать нужные вам автозапчасти и сделать предложение как можно быстрее.</label>

@@ -1,7 +1,7 @@
 <template>
 <div id="mark-template">
   <label for="inputMarkModel">Выберете марку автомобиля: </label>
-  <input id="inputMarkModel" type="text" v-model="searchMark" placeholder="Начните вводить название"> 
+  <input id="inputMarkModel" type="text" v-model="searchMark" placeholder="Начните вводить название" required> 
   <div class="allModel">
     <button class="checkMark" 
       v-for="dataMark of checkMore ? filteredMarks : filteredMarks.length > 16 ? filteredMarks.slice(0,15) : filteredMarks.slice(0,16)"
@@ -94,7 +94,11 @@ main #mark-template button.checkMark {
   margin: 7px 0;
   font-size: 14px;
   border-radius: 10px;
-  margin-right: 45px;
+  margin-right: 45px; 
+}
+main #mark-template button.checkMark:active {
+  border: 1px solid #0F73E8;
+  box-shadow: 5px 5px 10px -6px rgba(15,115,232,1);
 }
 main #mark-template button.checkMore {
   background-color: #0F73E8;
