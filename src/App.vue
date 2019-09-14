@@ -110,7 +110,7 @@ main #mainForm {
   display: block;
   justify-content: center;
   text-align: center;
-  margin: 80px auto 0 auto;
+  margin: 70px auto 70px auto;
 }
 main #mainForm h1 {
   width: 100%;
@@ -186,5 +186,23 @@ main .headerSiteBar .steps {
 }
 main p {
   margin: 0;
+}
+
+@media(max-width: 768px) {
+  main #mainForm {
+      width: 410px;
+      margin: 40px auto;
+  }  
+  main #mainForm h1 {
+      font-size: 20px;
+  }
+  main #mainForm input {
+      width: 300px;
+  }
+}
+@media(max-width: 425px) {
+  main #mainForm {
+    width: 300px;
+  }
 }
 </style>

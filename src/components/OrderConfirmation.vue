@@ -100,7 +100,7 @@ main #order-confirmation-template h3 {
   /* display: flex; */
 }
 main #order-confirmation-template .addImg {
-  width: 205px;
+  width: 210px;
   display: flex;
   background-color: #0067D7;
   color: #ffffff;

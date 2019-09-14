@@ -2,7 +2,7 @@
   <div id="info-acc-template">
     <label for="info-acc-first" class="label-first">Заполните данные для регистрации личного кабинета:</label>
     <input id="info-acc-first" class="info-acc" type="text" placeholder="Имя" v-model="saveName" required>
-    <input class="info-acc" type="text" placeholder="E-mail" v-model="saveEmail" required>
+    <input class="info-acc" type="email" placeholder="E-mail" v-model="saveEmail" required>
     <input id="info-acc-last" class="info-acc" type="text" placeholder="Телефон" v-model="saveTel" required>
     <label for="info-acc-last">На E-mail вы будете получать только сообщения по вашей заявке. А телефон увидит магазин, который вы выберете в качестве исполнителя.</label>
     <div class="wrap-btn">
