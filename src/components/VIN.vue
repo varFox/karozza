@@ -149,5 +149,21 @@ background-image: url(./../assets/scroll.png)
 ::-webkit-scrollbar{
   width: 10px;
 }
+@media(max-width: 768px) {
+  main #vin-template label {
+    position: absolute;
+    top: 210px;
+    left: 0;
+    font-size: 14px;
+  }
+  main #vin-template .vin {
+    width: 100%;
+  }
+  main #vin-template .btnNext {
+    margin: 0;
+    width: 100%;
+    margin-top: 55px;
+  }
+}
 </style>
 

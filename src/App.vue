@@ -204,5 +204,12 @@ main p {
   main #mainForm {
     width: 300px;
   }
+  main .headerSiteBar h2 {
+    font-size: 20px;
+  }
+  main .headerSiteBar button {
+    top: -40px;
+    left: 0;
+  }
 }
 </style>

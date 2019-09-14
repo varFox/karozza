@@ -85,5 +85,14 @@ main #info-acc-template .wrap-btn {
   display: flex;
   justify-content: center;
 }
+@media(max-width: 768px) {
+  main #info-acc-template input {
+    width: 100%;
+  }
+  main #info-acc-template .btnNext {
+    margin: 0;
+    width: 100%;
+  }
+}
 </style>
 

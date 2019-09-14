@@ -137,4 +137,16 @@ background-image: url(./../assets/scroll.png)
 ::-webkit-scrollbar{
   width: 10px;
 }
+@media(max-width: 768px) {
+  main #model-template label {
+    font-size: 18px;
+  }
+  main #model-template input {
+    width: 100%;
+  }
+  main #model-template button.checkModel {
+    margin: 3px 0;
+    margin-right: 20px;
+  }
+}
 </style>

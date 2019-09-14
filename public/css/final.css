@@ -194,6 +194,10 @@ header .mobile-menu .toggle-menu .mobile-info::after {
 header .mobile-menu .toggle-menu .mobile-headerCli {
     outline: #fff;
 }
+header .mobile-menu .toggle-menu .mobile-headerCli {
+    text-transform: none;
+    font-size: 18px;
+}
 
 
 
@@ -398,7 +402,3 @@ footer .footerColumn {
 }
 
 /* ------------------------- */
-
-header .mobile-menu .toggle-menu {
-    right: 0;
-}

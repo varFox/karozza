@@ -193,4 +193,8 @@ main input[type=file] {
     font-size: 12px;
   }
 }
+@media(max-width: 768px) {
+}
+
+
 </style>
