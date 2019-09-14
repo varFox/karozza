@@ -208,8 +208,12 @@ main p {
     font-size: 20px;
   }
   main .headerSiteBar button {
-    top: -40px;
+    top: 35px;
     left: 0;
+  }
+  main .siteBar {
+    margin-left: 15%;
+    width: 85%;
   }
 }
 </style>
