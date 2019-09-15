@@ -93,6 +93,9 @@ main #info-acc-template .wrap-btn {
     margin: 0;
     width: 100%;
   }
+  main #info-acc-template label {
+    width: 100%;  
+  }
 }
 </style>
 

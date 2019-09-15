@@ -146,6 +146,11 @@ background-image: url(./../assets/scroll.png)
   }
   main #model-template button.checkModel {
     margin: 3px 0;
+    margin-right: 6px;
+  }
+}
+@media(max-width: 425px) {
+  main #mark-template button.checkMark {
     margin-right: 20px;
   }
 }

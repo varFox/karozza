@@ -199,11 +199,6 @@ main p {
   main #mainForm input {
       width: 300px;
   }
-}
-@media(max-width: 425px) {
-  main #mainForm {
-    width: 300px;
-  }
   main .headerSiteBar h2 {
     font-size: 20px;
   }
@@ -215,5 +210,11 @@ main p {
     margin-left: 15%;
     width: 85%;
   }
+}
+@media(max-width: 425px) {
+  main #mainForm {
+    width: 300px;
+  }
+
 }
 </style>
